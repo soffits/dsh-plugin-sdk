@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "界面组件",
+    "description": "插件页面共用的小部件：图标、实时更新的时间、圆环和小折线、实时状态点和变化提示。"
+  },
+  "ui": {
+    "live": "实时",
+    "connecting": "正在连接",
+    "updated": "{time} 更新",
+    "liveUpdated": "实时 · {time} 更新",
+    "justNow": "刚刚",
+    "newSince": "上次查看之后有更新",
+    "suggested": "建议",
+    "now": "现在",
+    "inDuration": "{duration}后",
+    "earlier": "还有 {n} 条更早的",
+    "less": "收起"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "title": "Kit d’interface",
+    "description": "Des éléments partagés pour les pages des plugins : tuiles d’icônes, heures qui avancent, anneaux et courbes, point « en direct » et signaux de changement."
+  },
+  "ui": {
+    "live": "En direct",
+    "connecting": "Connexion",
+    "updated": "Mis à jour à {time}",
+    "liveUpdated": "En direct · mis à jour à {time}",
+    "justNow": "à l’instant",
+    "newSince": "Nouveau depuis votre dernière visite",
+    "suggested": "Suggestions",
+    "now": "maintenant",
+    "inDuration": "dans {duration}",
+    "earlier": "+{n} plus anciens",
+    "less": "Moins"
+  }
+}
