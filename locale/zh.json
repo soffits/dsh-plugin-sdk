@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "title": "界面操作",
+    "description": "插件页面共用的按钮（提问、完成、稍后提醒、打开），以及以卡片形式附在对话里的条目。"
+  },
+  "ui": {
+    "chat": "问问",
+    "chatAbout": "聊聊这个",
+    "done": "完成",
+    "snooze": "稍后提醒",
+    "event": "执行",
+    "link": "打开",
+    "in3h": "3 小时后",
+    "tomorrow": "明天 9:00",
+    "pick": "选个时间…",
+    "set": "稍后提醒",
+    "cancel": "取消",
+    "sending": "发送中…",
+    "pending": "等待处理",
+    "handled": "已处理",
+    "unhandled": "还没有被处理",
+    "failed": "没有成功：{message}",
+    "noWorkspace": "请先打开一次对话，再试一次。",
+    "noSession": "没能打开那个会话，请从会话列表再试一次。",
+    "busy": "输入框正在发送，请稍后再试。",
+    "noHandler": "这个按钮没有接收方。"
+  }
+}

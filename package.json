@@ -1,0 +1,69 @@
+{
+  "name": "@soffits/dsh-ui-actions",
+  "version": "0.1.0",
+  "description": "Shared action buttons for DeepSeek Harness plugin pages (ask, done, snooze, open), and items attached to a chat as a card: a removable card in the message box, the same card in the sent message, compact structured text for the model.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Sakina",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soffits/dsh-ui-actions.git"
+  },
+  "homepage": "https://github.com/soffits/dsh-ui-actions#readme",
+  "bugs": {
+    "url": "https://github.com/soffits/dsh-ui-actions/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "buttons",
+    "actions",
+    "chat"
+  ],
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./item": "./src/item.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "src/item.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "engines": {
+    "node": ">=22",
+    "dsh": ">=0.2.2-rc.1 <0.3.0-0"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/build.mjs --check && node --check index.js && node --check client.js",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}
