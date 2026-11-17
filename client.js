@@ -1,4 +1,4 @@
-/* @soffits/dsh-ui-actions 0.1.0: built by scripts/build.mjs from src/client/ and locale/. Do not edit. */
+/* @soffits/dsh-ui-actions 0.2.0: built by scripts/build.mjs from src/client/ and locale/. Do not edit. */
 window.__ModuleLoader__.load({
   id: "@soffits/dsh-ui-actions",
   factory: (require) => {
@@ -34,7 +34,7 @@ module.exports = __toCommonJS(index_exports);
 var import_react5 = require("react");
 
 // locales:locales
-var locales_default = { "en": { "meta": { "title": "UI actions", "description": "Shared buttons for plugin pages (ask, done, snooze, open) and items attached to a chat as a card." }, "ui": { "chat": "Ask", "chatAbout": "Chat about this", "done": "Done", "snooze": "Snooze", "event": "Go", "link": "Open", "in3h": "In 3 hours", "tomorrow": "Tomorrow 9:00", "pick": "Pick a time\u2026", "set": "Snooze", "cancel": "Cancel", "sending": "Sending\u2026", "pending": "Waiting for it to be picked up", "handled": "Done", "unhandled": "Nothing picked this up yet", "failed": "Didn\u2019t go through: {message}", "noWorkspace": "Open a conversation once first, then try again.", "noSession": "That conversation didn\u2019t open. Try again from the conversation list.", "busy": "The message box is busy sending; try again in a moment.", "noHandler": "This button has nothing to send its press to." } }, "fr": { "meta": { "title": "Actions d\u2019interface", "description": "Boutons partag\xE9s des pages de plugins (demander, fait, plus tard, ouvrir) et \xE9l\xE9ments joints \xE0 une conversation sous forme de carte." }, "ui": { "chat": "Demander", "chatAbout": "En discuter", "done": "Fait", "snooze": "Plus tard", "event": "Lancer", "link": "Ouvrir", "in3h": "Dans 3 heures", "tomorrow": "Demain 9:00", "pick": "Choisir une heure\u2026", "set": "Rappeler", "cancel": "Annuler", "sending": "Envoi\u2026", "pending": "En attente de traitement", "handled": "Fait", "unhandled": "Personne ne l\u2019a encore pris en charge", "failed": "\xC9chec : {message}", "noWorkspace": "Ouvrez d\u2019abord une conversation, puis r\xE9essayez.", "noSession": "La conversation ne s\u2019est pas ouverte. R\xE9essayez depuis la liste des conversations.", "busy": "La zone de message est en cours d\u2019envoi ; r\xE9essayez dans un instant.", "noHandler": "Ce bouton n\u2019a rien \xE0 qui transmettre l\u2019appui." } }, "zh": { "meta": { "title": "\u754C\u9762\u64CD\u4F5C", "description": "\u63D2\u4EF6\u9875\u9762\u5171\u7528\u7684\u6309\u94AE\uFF08\u63D0\u95EE\u3001\u5B8C\u6210\u3001\u7A0D\u540E\u63D0\u9192\u3001\u6253\u5F00\uFF09\uFF0C\u4EE5\u53CA\u4EE5\u5361\u7247\u5F62\u5F0F\u9644\u5728\u5BF9\u8BDD\u91CC\u7684\u6761\u76EE\u3002" }, "ui": { "chat": "\u95EE\u95EE", "chatAbout": "\u804A\u804A\u8FD9\u4E2A", "done": "\u5B8C\u6210", "snooze": "\u7A0D\u540E\u63D0\u9192", "event": "\u6267\u884C", "link": "\u6253\u5F00", "in3h": "3 \u5C0F\u65F6\u540E", "tomorrow": "\u660E\u5929 9:00", "pick": "\u9009\u4E2A\u65F6\u95F4\u2026", "set": "\u7A0D\u540E\u63D0\u9192", "cancel": "\u53D6\u6D88", "sending": "\u53D1\u9001\u4E2D\u2026", "pending": "\u7B49\u5F85\u5904\u7406", "handled": "\u5DF2\u5904\u7406", "unhandled": "\u8FD8\u6CA1\u6709\u88AB\u5904\u7406", "failed": "\u6CA1\u6709\u6210\u529F\uFF1A{message}", "noWorkspace": "\u8BF7\u5148\u6253\u5F00\u4E00\u6B21\u5BF9\u8BDD\uFF0C\u518D\u8BD5\u4E00\u6B21\u3002", "noSession": "\u6CA1\u80FD\u6253\u5F00\u90A3\u4E2A\u4F1A\u8BDD\uFF0C\u8BF7\u4ECE\u4F1A\u8BDD\u5217\u8868\u518D\u8BD5\u4E00\u6B21\u3002", "busy": "\u8F93\u5165\u6846\u6B63\u5728\u53D1\u9001\uFF0C\u8BF7\u7A0D\u540E\u518D\u8BD5\u3002", "noHandler": "\u8FD9\u4E2A\u6309\u94AE\u6CA1\u6709\u63A5\u6536\u65B9\u3002" } } };
+var locales_default = { "en": { "meta": { "title": "UI actions", "description": "Shared buttons for plugin pages (ask, done, snooze, open) and items attached to a chat as a card." }, "ui": { "chat": "Ask", "chatAbout": "Chat about this", "done": "Done", "snooze": "Snooze", "event": "Go", "link": "Open", "in3h": "In 3 hours", "tomorrow": "Tomorrow 9:00", "pick": "Pick a time\u2026", "set": "Snooze", "cancel": "Cancel", "sending": "Sending\u2026", "pending": "Waiting for it to be picked up", "handled": "Done", "unhandled": "Nothing picked this up yet", "failed": "Didn\u2019t go through: {message}", "noWorkspace": "Open a conversation once first, then try again.", "noSession": "That conversation didn\u2019t open. Try again from the conversation list.", "busy": "The message box is busy sending; try again in a moment.", "noHandler": "This button has nothing to send its press to.", "starting": "Starting\u2026", "started": "Started", "openSession": "Open conversation" } }, "fr": { "meta": { "title": "Actions d\u2019interface", "description": "Boutons partag\xE9s des pages de plugins (demander, fait, plus tard, ouvrir) et \xE9l\xE9ments joints \xE0 une conversation sous forme de carte." }, "ui": { "chat": "Demander", "chatAbout": "En discuter", "done": "Fait", "snooze": "Plus tard", "event": "Lancer", "link": "Ouvrir", "in3h": "Dans 3 heures", "tomorrow": "Demain 9:00", "pick": "Choisir une heure\u2026", "set": "Rappeler", "cancel": "Annuler", "sending": "Envoi\u2026", "pending": "En attente de traitement", "handled": "Fait", "unhandled": "Personne ne l\u2019a encore pris en charge", "failed": "\xC9chec : {message}", "noWorkspace": "Ouvrez d\u2019abord une conversation, puis r\xE9essayez.", "noSession": "La conversation ne s\u2019est pas ouverte. R\xE9essayez depuis la liste des conversations.", "busy": "La zone de message est en cours d\u2019envoi ; r\xE9essayez dans un instant.", "noHandler": "Ce bouton n\u2019a rien \xE0 qui transmettre l\u2019appui.", "starting": "D\xE9marrage\u2026", "started": "Lanc\xE9", "openSession": "Ouvrir la conversation" } }, "zh": { "meta": { "title": "\u754C\u9762\u64CD\u4F5C", "description": "\u63D2\u4EF6\u9875\u9762\u5171\u7528\u7684\u6309\u94AE\uFF08\u63D0\u95EE\u3001\u5B8C\u6210\u3001\u7A0D\u540E\u63D0\u9192\u3001\u6253\u5F00\uFF09\uFF0C\u4EE5\u53CA\u4EE5\u5361\u7247\u5F62\u5F0F\u9644\u5728\u5BF9\u8BDD\u91CC\u7684\u6761\u76EE\u3002" }, "ui": { "chat": "\u95EE\u95EE", "chatAbout": "\u804A\u804A\u8FD9\u4E2A", "done": "\u5B8C\u6210", "snooze": "\u7A0D\u540E\u63D0\u9192", "event": "\u6267\u884C", "link": "\u6253\u5F00", "in3h": "3 \u5C0F\u65F6\u540E", "tomorrow": "\u660E\u5929 9:00", "pick": "\u9009\u4E2A\u65F6\u95F4\u2026", "set": "\u7A0D\u540E\u63D0\u9192", "cancel": "\u53D6\u6D88", "sending": "\u53D1\u9001\u4E2D\u2026", "pending": "\u7B49\u5F85\u5904\u7406", "handled": "\u5DF2\u5904\u7406", "unhandled": "\u8FD8\u6CA1\u6709\u88AB\u5904\u7406", "failed": "\u6CA1\u6709\u6210\u529F\uFF1A{message}", "noWorkspace": "\u8BF7\u5148\u6253\u5F00\u4E00\u6B21\u5BF9\u8BDD\uFF0C\u518D\u8BD5\u4E00\u6B21\u3002", "noSession": "\u6CA1\u80FD\u6253\u5F00\u90A3\u4E2A\u4F1A\u8BDD\uFF0C\u8BF7\u4ECE\u4F1A\u8BDD\u5217\u8868\u518D\u8BD5\u4E00\u6B21\u3002", "busy": "\u8F93\u5165\u6846\u6B63\u5728\u53D1\u9001\uFF0C\u8BF7\u7A0D\u540E\u518D\u8BD5\u3002", "noHandler": "\u8FD9\u4E2A\u6309\u94AE\u6CA1\u6709\u63A5\u6536\u65B9\u3002", "starting": "\u6B63\u5728\u5F00\u59CB\u2026", "started": "\u5DF2\u5F00\u59CB", "openSession": "\u6253\u5F00\u5BF9\u8BDD" } } };
 
 // src/item.js
 var TITLE_MAX = 200;
@@ -97,6 +97,12 @@ function itemSummary({ sourceName, title, lines = [] }) {
     body: shown.join("\n")
   };
 }
+function stepMessage(instruction, item) {
+  const quote = itemText(item).split("\n").map((line) => `> ${line}`).join("\n");
+  return `${String(instruction).trim()}
+
+${quote}`;
+}
 
 // src/rule.js
 var ITEM_NODE = "ui-actions-item";
@@ -128,6 +134,17 @@ var itemRule = {
 // src/client/bar.js
 var import_react = require("react");
 
+// src/text.js
+function pickText(value, language = "en") {
+  if (typeof value === "string") return value;
+  if (value === null || typeof value !== "object") return "";
+  const tags = Object.keys(value);
+  const want = String(language).toLowerCase();
+  const primary = want.split("-")[0];
+  const found = tags.find((tag) => tag.toLowerCase() === want) ?? tags.find((tag) => tag.toLowerCase() === primary) ?? tags.find((tag) => tag.toLowerCase().split("-")[0] === primary) ?? tags.find((tag) => tag.toLowerCase() === "en") ?? tags[0];
+  return typeof value[found] === "string" ? value[found] : "";
+}
+
 // src/client/look.js
 var STYLE_ID = "dsh-ui-actions-style";
 var CSS = `
@@ -156,6 +173,17 @@ var CSS = `
 .ua-menu button{min-height:44px;font-size:15px}
 .ua-menu input{min-height:44px}
 }
+.ua-break{flex-basis:100%;height:0}
+.ua-stepWrap{display:inline-flex;flex-wrap:wrap;align-items:center;gap:4px 8px;max-width:100%}
+.ua-step{box-sizing:border-box;display:inline-flex;align-items:flex-start;gap:8px;min-height:32px;max-width:100%;padding:6px 12px;border:0;border-radius:8px;background:color-mix(in srgb,var(--dsw-alias-state-business-primary) 10%,transparent);color:var(--dsw-alias-state-business-primary);font:inherit;font-size:13px;line-height:20px;text-align:left;cursor:pointer;white-space:normal;overflow-wrap:anywhere}
+.ua-step svg{flex:none;width:14px;height:14px;margin-top:3px}
+@media (hover:hover){.ua-step:hover:not(:disabled):not([data-state=started]){background:color-mix(in srgb,var(--dsw-alias-state-business-primary) 18%,transparent)}}
+.ua-step:disabled{cursor:default}
+.ua-step[data-state=starting] svg{animation:ua-pulse 1.2s ease-in-out infinite}
+.ua-step[data-state=started]{background:transparent;box-shadow:inset 0 0 0 .5px var(--dsw-alias-border-l3);color:var(--dsw-alias-label-secondary);cursor:default}
+.ua-step[data-state=started] svg{color:var(--dsw-alias-state-success-primary)}
+.ua-stepOpen{border:0;background:none;padding:4px 2px;color:var(--dsw-alias-state-business-primary);font:inherit;font-size:13px;cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+@media (width<=640px){.ua-stepWrap,.ua-step{width:100%}.ua-step{min-height:40px;padding:9px 12px}}
 .ua-item{box-sizing:border-box;display:inline-flex;align-items:center;gap:10px;vertical-align:top;width:min(100%,320px);max-width:100%;padding:8px 12px 8px 8px;border-radius:12px;background:var(--dsw-alias-bg-base);box-shadow:inset 0 0 0 .5px var(--dsw-alias-border-l2);color:var(--dsw-alias-label-primary);text-align:left;white-space:normal;line-height:18px}
 .ua-itemIcon{flex:none;display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:8px;background:var(--dsw-alias-bg-layer-1,var(--dsw-alias-interactive-bg-hover));color:var(--dsw-alias-label-secondary)}
 .ua-itemIcon svg{width:18px;height:18px}
@@ -173,6 +201,7 @@ var PATHS = {
   link: "M6 3.5H3.5v9h9V10M9 3h4v4M13 3 7.5 8.5",
   pending: "M8 8m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0",
   unhandled: "M8 3.5v5.5M8 12v.5",
+  step: "M3 8h8.5M8.5 4.5 12 8l-3.5 3.5",
   item: "M3.5 2.5h6l3 3v8h-9zM9.5 2.5v3h3M5.5 8.5h5M5.5 11h3.5"
 };
 
@@ -191,7 +220,7 @@ function Glyph({ name: name2 }) {
     (0, import_react.createElement)("path", { d: PATHS[name2] ?? PATHS.event })
   );
 }
-function createBar({ useWords, chat }) {
+function createBar({ useWords, useLanguage, chat, start, open }) {
   function SnoozeMenu({ onPick, onClose }) {
     const t = useWords();
     const [picking, setPicking] = (0, import_react.useState)(false);
@@ -227,7 +256,9 @@ function createBar({ useWords, chat }) {
     );
   }
   function ActionButton({ action, state, compact = false, about, onPress }) {
+    if (action.kind === "step") return (0, import_react.createElement)(StepButton, { action, state, about, onPress });
     const t = useWords();
+    const language = useLanguage();
     const [local, setLocal] = (0, import_react.useState)(null);
     const [error, setError] = (0, import_react.useState)(null);
     const [menu, setMenu] = (0, import_react.useState)(false);
@@ -235,7 +266,7 @@ function createBar({ useWords, chat }) {
       if (state) setLocal(null);
     }, [state]);
     const shown = local ?? state;
-    const label = action.label || t(action.kind === "chat" && action.id === DEFAULT_CHAT.id ? "chatAbout" : action.kind);
+    const label = pickText(action.label, language) || t(action.kind === "chat" && action.id === DEFAULT_CHAT.id ? "chatAbout" : action.kind);
     const title = shown === "sending" ? t("sending") : shown === "pending" ? t("pending") : shown === "done" ? t("handled") : shown === "unhandled" ? t("unhandled") : error ?? label;
     const icon = shown === "done" ? "done" : shown === "unhandled" ? "unhandled" : action.kind;
     const className = `ua-btn${compact ? " ua-icon" : ""}`;
@@ -252,7 +283,7 @@ function createBar({ useWords, chat }) {
       try {
         if (action.kind === "chat") {
           const payload = action.payload ?? {};
-          await chat({ ...about, ...payload.context === void 0 ? {} : { context: payload.context } }, { prompt: payload.prompt ?? "", session: payload.session ?? "new" });
+          await chat({ ...about, ...payload.context === void 0 ? {} : { context: payload.context } }, { prompt: pickText(payload.prompt, language), session: payload.session ?? "new" });
           setLocal(null);
         } else {
           if (onPress === void 0) throw new Error(t("noHandler"));
@@ -265,7 +296,7 @@ function createBar({ useWords, chat }) {
       }
     };
     const onClick = () => {
-      if (action.kind === "snooze" && action.payload?.until === void 0) setMenu((open) => !open);
+      if (action.kind === "snooze" && action.payload?.until === void 0) setMenu((open2) => !open2);
       else send();
     };
     const busy = shown === "sending" || shown === "pending";
@@ -277,10 +308,61 @@ function createBar({ useWords, chat }) {
       error && !compact && (0, import_react.createElement)("span", { className: "ua-error", role: "alert" }, error)
     );
   }
-  function ActionBar({ actions = [], states = {}, compact = false, about, defaultChat = false, onPress }) {
-    const list = defaultChat && about !== void 0 && !actions.some((action) => action.kind === "chat") ? [DEFAULT_CHAT, ...actions] : actions;
-    if (list.length === 0) return null;
-    return (0, import_react.createElement)("div", { className: "ua-bar" }, list.map((action) => (0, import_react.createElement)(ActionButton, { key: action.id, action, state: states[action.id], compact, about, onPress })));
+  function StepButton({ action, state, about, onPress }) {
+    const t = useWords();
+    const language = useLanguage();
+    const [local, setLocal] = (0, import_react.useState)(null);
+    const [error, setError] = (0, import_react.useState)(null);
+    const label = pickText(action.label, language);
+    const session = typeof local === "object" && local !== null ? local.session : null;
+    const shown = local === "starting" ? "starting" : session || state ? "started" : "ready";
+    const run = async () => {
+      setError(null);
+      setLocal("starting");
+      try {
+        if (onPress === void 0) throw new Error(t("noHandler"));
+        await onPress(action, {});
+        const payload = action.payload ?? {};
+        const instruction = pickText(payload.prompt, language) || label;
+        const id = await start({ ...about, ...payload.context === void 0 ? {} : { context: payload.context } }, { instruction, session: payload.session ?? "new" });
+        setLocal({ session: id });
+      } catch (reason) {
+        setLocal(null);
+        setError(t("failed", { message: reason?.message ?? String(reason) }));
+      }
+    };
+    if (shown === "started") {
+      return (0, import_react.createElement)(
+        "span",
+        { className: "ua-stepWrap" },
+        (0, import_react.createElement)(
+          "span",
+          { className: "ua-step", "data-state": "started", title: t("started") },
+          (0, import_react.createElement)(Glyph, { name: "done" }),
+          (0, import_react.createElement)("span", null, label)
+        ),
+        session !== null && (0, import_react.createElement)("button", { type: "button", className: "ua-stepOpen", onClick: () => open(session) }, t("openSession"))
+      );
+    }
+    return (0, import_react.createElement)(
+      "span",
+      { className: "ua-stepWrap" },
+      (0, import_react.createElement)(
+        "button",
+        { type: "button", className: "ua-step", "data-state": shown, disabled: shown === "starting", title: shown === "starting" ? t("starting") : label, onClick: run },
+        (0, import_react.createElement)(Glyph, { name: shown === "starting" ? "pending" : "step" }),
+        (0, import_react.createElement)("span", null, label)
+      ),
+      error && (0, import_react.createElement)("span", { className: "ua-error", role: "alert" }, error)
+    );
+  }
+  function ActionBar({ actions = [], states = {}, compact = false, about, defaultChat = false, part, onPress, children }) {
+    const declared = defaultChat && about !== void 0 && !actions.some((action) => action.kind === "chat") ? [DEFAULT_CHAT, ...actions] : actions;
+    const steps = part === "buttons" ? [] : declared.filter((action) => action.kind === "step");
+    const rest = part === "steps" ? [] : declared.filter((action) => action.kind !== "step");
+    if (steps.length + rest.length === 0) return children ? (0, import_react.createElement)("div", { className: "ua-bar" }, children) : null;
+    const button = (action) => (0, import_react.createElement)(ActionButton, { key: action.id, action, state: states[action.id], compact, about, onPress });
+    return (0, import_react.createElement)("div", { className: "ua-bar" }, steps.map(button), steps.length > 0 && rest.length > 0 && (0, import_react.createElement)("span", { key: "_break", className: "ua-break", "aria-hidden": true }), rest.map(button), children);
   }
   return { ActionBar, ActionButton };
 }
@@ -342,6 +424,22 @@ function createPending() {
   };
 }
 
+// src/workspace.js
+function recentWorkspace(workspaces, sessionsById) {
+  let best;
+  let bestTime = Number.NEGATIVE_INFINITY;
+  for (const workspace of workspaces.items ?? []) {
+    let latest = Number.NEGATIVE_INFINITY;
+    for (const id of workspace.sessionIds ?? []) latest = Math.max(latest, sessionsById?.[id]?.updatedAt ?? Number.NEGATIVE_INFINITY);
+    if (latest === Number.NEGATIVE_INFINITY) latest = Date.parse(workspace.createdAt) || 0;
+    if (best === void 0 || latest > bestTime) {
+      best = workspace.workspaceId;
+      bestTime = latest;
+    }
+  }
+  return best;
+}
+
 // src/client/chat.js
 var sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 function createChat({ ctx, t, sources }) {
@@ -374,6 +472,26 @@ function createChat({ ctx, t, sources }) {
     const binding = ctx.get("sessions")?.binding(session);
     if (prompt.trim() !== "" && binding !== void 0) ctx.get("conversation")?.input.requestDraftInitialization(binding, { prompt, whenDraftExists: "append" });
   }
+  async function start(about, { instruction, session = "new" }) {
+    const sessions = ctx.get("sessions");
+    if (sessions === void 0) throw new Error(t("noWorkspace"));
+    const item = { ...about, sourceName: about.sourceName ?? sources.name(about.source) ?? about.source };
+    let id = session;
+    if (session === "new") {
+      const workspaceId = recentWorkspace(ctx.get("workspaces")?.list.getSnapshot() ?? {}, sessions.list.getSnapshot().byId);
+      if (workspaceId === void 0) throw new Error(t("noWorkspace"));
+      id = await sessions.create({ workspaceId });
+    }
+    await sessions.using(id, { source: "uiActionsStep" }, async (reference) => {
+      const { session: face } = await reference.ready;
+      const result = await face.prompt([{ type: "text", text: stepMessage(instruction, item) }], "queue");
+      if (!result.ok) throw new Error(result.error?.message ?? t("noSession"));
+    });
+    return id;
+  }
+  function open(session) {
+    ctx.get("uiWorkspace")?.openSession(session);
+  }
   function Adopter({ inputActions, useInput }) {
     const draft = useInput((state) => state.draft);
     const editable = useInput((state) => state.phase === "plain");
@@ -390,7 +508,7 @@ function createChat({ ctx, t, sources }) {
     }, [draft, editable]);
     return null;
   }
-  return { chat, Adopter };
+  return { chat, start, open, Adopter };
 }
 
 // src/client/sources.js
@@ -462,16 +580,19 @@ function apply(ctx) {
     }, "ui-actions: styles");
   }
   const t = ctx.locale.bind(NS);
-  const useWords = () => {
+  const useLanguage = () => {
     const subscribe = (0, import_react5.useCallback)((listener) => ctx.locale.subscribe(listener), []);
-    (0, import_react5.useSyncExternalStore)(subscribe, () => ctx.locale.getSnapshot().active);
+    return (0, import_react5.useSyncExternalStore)(subscribe, () => ctx.locale.getSnapshot().active);
+  };
+  const useWords = () => {
+    useLanguage();
     return t;
   };
   const sources = createSources();
-  const { chat, Adopter } = createChat({ ctx, t, sources });
-  const { ActionBar, ActionButton } = createBar({ useWords, chat });
+  const { chat, start, open, Adopter } = createChat({ ctx, t, sources });
+  const { ActionBar, ActionButton } = createBar({ useWords, useLanguage, chat, start, open });
   const ItemCard = createCard({ sources });
-  ctx.provide("uiActions", { ActionBar, ActionButton, chat, registerSource: (source) => sources.register(source) });
+  ctx.provide("uiActions", { ActionBar, ActionButton, chat, start, registerSource: (source) => sources.register(source) });
   ctx.inject(["uiConversation"], (scope) => {
     scope.effect(() => scope.uiConversation.userText.register(itemRule), "ui-actions: item rule");
   });

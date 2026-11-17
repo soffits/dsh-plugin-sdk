@@ -23,6 +23,9 @@
     "noWorkspace": "Open a conversation once first, then try again.",
     "noSession": "That conversation didn’t open. Try again from the conversation list.",
     "busy": "The message box is busy sending; try again in a moment.",
-    "noHandler": "This button has nothing to send its press to."
+    "noHandler": "This button has nothing to send its press to.",
+    "starting": "Starting…",
+    "started": "Started",
+    "openSession": "Open conversation"
   }
 }

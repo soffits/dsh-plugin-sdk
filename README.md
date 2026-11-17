@@ -3,6 +3,7 @@
 Shared action buttons for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (DSH) plugin pages, and a way to ask the agent about an item that keeps the item as a card instead of a lump of text.
 
 - **Buttons** for anything a plugin shows (a card, a row, a notification): ask, done, snooze, a custom event, open a link. Same look, phone-sized touch targets, words in the person's language.
+- **Suggested next steps** that start on one tap. Whoever made the item can attach up to three concrete steps ("Pay the invoice from the joint account", "Move it to tomorrow 9:00"); a tap sends that step with the item to the assistant in a new conversation, as the person, with no draft to confirm, and the button links to it. The label is the go-ahead, so it says the step plainly.
 - **Ask about an item.** A new conversation opens with the item attached to the message box as a small removable card (its title and first line), and the person writes their own words beside it. The sent message shows the same card above their words, with the plugin's icon and name. The agent gets the item as a short quote it can read directly:
 
   ```
@@ -53,10 +54,11 @@ h(buttons.ActionBar, {
 ```
 
 - `ActionBar({ actions, states, compact, about, defaultChat, onPress })` renders a row of buttons; `compact` shows icons only. `ActionButton({ action, state, compact, about, onPress })` is one button.
-- Kinds: `chat` (opens a conversation about `about`; `payload.prompt` starts the person's message, `payload.context` replaces `about.context`, `payload.session` continues a session instead of opening a new one), `done`, `snooze` (a picker unless `payload.until`; `extra.until` goes to `onPress`), `event`, `link` (`payload.url`).
+- Kinds: `step` (a suggested next step, sent on one tap: `label` is required and says the step; `payload.prompt` is sent instead when the step needs more words than the label, never more than it authorises; `payload.context`, `payload.session` as for chat; the press goes to `onPress` first so your server records who started what, then the step is sent; at most three, shown first, on their own line, wrapping), `chat` (opens a conversation about `about`; `payload.prompt` starts the person's message, `payload.context` replaces `about.context`, `payload.session` continues a session instead of opening a new one), `done`, `snooze` (a picker unless `payload.until`; `extra.until` goes to `onPress`), `event`, `link` (`payload.url`).
 - `onPress` is your own server call for `done`, `snooze` and `event`; resolve when your server accepted the press. The button shows the press as pending until `states` says `done` or `unhandled`.
-- A button without `label` uses this package's words; give `label` for your own wording (for example a name from your plugin's settings).
-- `chat(about, { prompt, session })` does the same as a chat button, from your own code.
+- A button without `label` uses this package's words; give `label` for your own wording. A `label` (and a chat or step `payload.prompt`) is text or a map from language tag to text (`{ "en": "Pay it", "zh": "去付款" }`); the person's language is shown, then its primary tag, then `en`, then the first one.
+- `part: 'steps' | 'buttons'` renders only the steps or only the other buttons, for layouts that place them apart (a narrow row keeps its buttons beside its title and its steps on a line below). Children are placed after the fixed buttons (your own controls on the same line).
+- `chat(about, { prompt, session })` does the same as a chat button, from your own code; `start(about, { instruction, session })` sends like a step and resolves to the session id.
 - `registerSource({ id, name, icon })` names your plugin on item cards; `name` can be a function so it follows the language, `icon` is a component taking `{ size }`. It returns a function that unregisters.
 - `about.lines`: what the item shows, one entry per line (at most 15 are sent); `about.context`: small JSON with the ids and values the agent needs to act on it.
 

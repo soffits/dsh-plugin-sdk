@@ -6,6 +6,7 @@ A DeepSeek Harness plugin with no Host behaviour: its Web client provides `ctx.u
 
 - `src/item.js`: the item as model text (title, `[Item from <name> (<package>)]`, lines, `context:` JSON), reading it back, and the composer summary. Pure; exported as `./item`.
 - `src/rule.js`: the UserText rule (order -20, before DSH's own quote rule) that turns an item quote into a `ui-actions-item` node and the blank lines around it into line breaks.
+- `src/text.js`: text maps (`{ en, zh, … }`) shown in the person's language. `src/workspace.js`: where a step's new conversation goes (the workspace with the latest activity).
 - `src/pending.js`: new conversations waiting for their composer (DSH's `startSession` takes text only and doesn't say which session it opened).
 - `src/client/`: `index.js` (apply: words, styles, the service, slot registrations), `bar.js` (buttons), `chat.js` (opening a conversation; the composer member that swaps a seeded draft for the chip), `card.js` (the card in messages), `sources.js` (plugin names and icons), `look.js` (CSS, glyphs).
 - `client.js`: built by `npm run build` from `src/client/` and `locale/*.json` (esbuild; `react` comes from DSH's loader). Committed so a linked checkout runs as it is; `npm run check` fails when it is stale.
@@ -16,7 +17,7 @@ A DeepSeek Harness plugin with no Host behaviour: its Web client provides `ctx.u
 - The item text is read by models and kept in old messages: change it only additively, and keep `parseItem` reading every format ever sent.
 - No assistant name and no language in code: words come from `locale/<tag>.json`; labels with a name come from the offering plugin's data.
 - Client scripts run as classic scripts in one global scope: everything stays inside the loader factory (the build wraps it).
-- DSH seams used: `insertQuote(text, summary)` (the summary from 0.2.2-rc.2; before that the chip shows the text), `uiWorkspace.startSession` / `openSession`, `uiConversation.userText`, the slots `conversation.user.text.node` and `conversation.input.dock`. Check them against each new DSH release.
+- DSH seams used: `insertQuote(text, summary)` (the summary from 0.2.2-rc.2; before that the chip shows the text), `uiWorkspace.startSession` / `openSession`, `sessions.create` + `sessions.using` → `session.prompt` (steps send as the person), `uiConversation.userText`, the slots `conversation.user.text.node` and `conversation.input.dock`. Check them against each new DSH release.
 
 ## Checks
 

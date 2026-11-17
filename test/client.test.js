@@ -51,7 +51,7 @@ test('apply provides the service, registers the item rule, the card and the comp
   }
   exports.apply(ctx)
   for (const fn of effects) fn()
-  assert.deepEqual(Object.keys(calls.provided.uiActions).sort(), ['ActionBar', 'ActionButton', 'chat', 'registerSource'])
+  assert.deepEqual(Object.keys(calls.provided.uiActions).sort(), ['ActionBar', 'ActionButton', 'chat', 'registerSource', 'start'])
   assert.deepEqual(calls.rules, ['ui-actions-item'])
   assert.deepEqual(calls.slots.sort(), ['conversation.input.dock', 'conversation.user.text.node'])
   assert.deepEqual(calls.words.sort(), Object.keys(locales).sort())

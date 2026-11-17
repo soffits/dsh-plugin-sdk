@@ -23,6 +23,9 @@
     "noWorkspace": "Ouvrez d’abord une conversation, puis réessayez.",
     "noSession": "La conversation ne s’est pas ouverte. Réessayez depuis la liste des conversations.",
     "busy": "La zone de message est en cours d’envoi ; réessayez dans un instant.",
-    "noHandler": "Ce bouton n’a rien à qui transmettre l’appui."
+    "noHandler": "Ce bouton n’a rien à qui transmettre l’appui.",
+    "starting": "Démarrage…",
+    "started": "Lancé",
+    "openSession": "Ouvrir la conversation"
   }
 }

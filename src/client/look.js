@@ -28,6 +28,17 @@ export const CSS = `
 .ua-menu button{min-height:44px;font-size:15px}
 .ua-menu input{min-height:44px}
 }
+.ua-break{flex-basis:100%;height:0}
+.ua-stepWrap{display:inline-flex;flex-wrap:wrap;align-items:center;gap:4px 8px;max-width:100%}
+.ua-step{box-sizing:border-box;display:inline-flex;align-items:flex-start;gap:8px;min-height:32px;max-width:100%;padding:6px 12px;border:0;border-radius:8px;background:color-mix(in srgb,var(--dsw-alias-state-business-primary) 10%,transparent);color:var(--dsw-alias-state-business-primary);font:inherit;font-size:13px;line-height:20px;text-align:left;cursor:pointer;white-space:normal;overflow-wrap:anywhere}
+.ua-step svg{flex:none;width:14px;height:14px;margin-top:3px}
+@media (hover:hover){.ua-step:hover:not(:disabled):not([data-state=started]){background:color-mix(in srgb,var(--dsw-alias-state-business-primary) 18%,transparent)}}
+.ua-step:disabled{cursor:default}
+.ua-step[data-state=starting] svg{animation:ua-pulse 1.2s ease-in-out infinite}
+.ua-step[data-state=started]{background:transparent;box-shadow:inset 0 0 0 .5px var(--dsw-alias-border-l3);color:var(--dsw-alias-label-secondary);cursor:default}
+.ua-step[data-state=started] svg{color:var(--dsw-alias-state-success-primary)}
+.ua-stepOpen{border:0;background:none;padding:4px 2px;color:var(--dsw-alias-state-business-primary);font:inherit;font-size:13px;cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+@media (width<=640px){.ua-stepWrap,.ua-step{width:100%}.ua-step{min-height:40px;padding:9px 12px}}
 .ua-item{box-sizing:border-box;display:inline-flex;align-items:center;gap:10px;vertical-align:top;width:min(100%,320px);max-width:100%;padding:8px 12px 8px 8px;border-radius:12px;background:var(--dsw-alias-bg-base);box-shadow:inset 0 0 0 .5px var(--dsw-alias-border-l2);color:var(--dsw-alias-label-primary);text-align:left;white-space:normal;line-height:18px}
 .ua-itemIcon{flex:none;display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:8px;background:var(--dsw-alias-bg-layer-1,var(--dsw-alias-interactive-bg-hover));color:var(--dsw-alias-label-secondary)}
 .ua-itemIcon svg{width:18px;height:18px}
@@ -47,5 +58,6 @@ export const PATHS = {
   link: 'M6 3.5H3.5v9h9V10M9 3h4v4M13 3 7.5 8.5',
   pending: 'M8 8m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0',
   unhandled: 'M8 3.5v5.5M8 12v.5',
+  step: 'M3 8h8.5M8.5 4.5 12 8l-3.5 3.5',
   item: 'M3.5 2.5h6l3 3v8h-9zM9.5 2.5v3h3M5.5 8.5h5M5.5 11h3.5',
 }

@@ -4,8 +4,9 @@
  * the person writes their own words beside it.
  */
 import { useLayoutEffect } from 'react'
-import { itemSummary, itemText } from '../item.js'
+import { itemSummary, itemText, stepMessage } from '../item.js'
 import { createPending, draftText } from '../pending.js'
+import { recentWorkspace } from '../workspace.js'
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
@@ -57,6 +58,38 @@ export function createChat({ ctx, t, sources }) {
   }
 
   /**
+   * Start a suggested step: send the instruction and the item into a session
+   * as the person, with no draft to confirm, and stay on the page.
+   * @param {object} about - as for `chat`
+   * @param {object} options
+   * @param {string} options.instruction - what the person agreed to, in their language
+   * @param {string} [options.session] - `new` (default) or a session id to continue
+   * @returns {Promise<string>} the session id
+   */
+  async function start(about, { instruction, session = 'new' }) {
+    const sessions = ctx.get('sessions')
+    if (sessions === undefined) throw new Error(t('noWorkspace'))
+    const item = { ...about, sourceName: about.sourceName ?? sources.name(about.source) ?? about.source }
+    let id = session
+    if (session === 'new') {
+      const workspaceId = recentWorkspace(ctx.get('workspaces')?.list.getSnapshot() ?? {}, sessions.list.getSnapshot().byId)
+      if (workspaceId === undefined) throw new Error(t('noWorkspace'))
+      id = await sessions.create({ workspaceId })
+    }
+    await sessions.using(id, { source: 'uiActionsStep' }, async (reference) => {
+      const { session: face } = await reference.ready
+      const result = await face.prompt([{ type: 'text', text: stepMessage(instruction, item) }], 'queue')
+      if (!result.ok) throw new Error(result.error?.message ?? t('noSession'))
+    })
+    return id
+  }
+
+  /** Show a session in the main view. */
+  function open(session) {
+    ctx.get('uiWorkspace')?.openSession(session)
+  }
+
+  /**
    * Zero-size member of every composer (`conversation.input.dock`): takes the
    * pending chat whose text is this composer's whole draft and swaps the text
    * for the item chip and the prompt.
@@ -78,5 +111,5 @@ export function createChat({ ctx, t, sources }) {
     return null
   }
 
-  return { chat, Adopter }
+  return { chat, start, open, Adopter }
 }

@@ -109,3 +109,12 @@ export function itemSummary({ sourceName, title, lines = [] }) {
     body: shown.join('\n'),
   }
 }
+
+/**
+ * The message a step sends: the person's instruction first (a session is
+ * named after its first words), then the item as a quote.
+ */
+export function stepMessage(instruction, item) {
+  const quote = itemText(item).split('\n').map(line => `> ${line}`).join('\n')
+  return `${String(instruction).trim()}\n\n${quote}`
+}

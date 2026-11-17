@@ -3,7 +3,8 @@
  *
  *   ctx.uiActions.ActionBar      buttons for one item (React component)
  *   ctx.uiActions.ActionButton   one button
- *   ctx.uiActions.chat(about, { prompt, session })
+ *   ctx.uiActions.chat(about, { prompt, session })            a draft the person sends
+ *   ctx.uiActions.start(about, { instruction, session }) → id  sent at once (a step)
  *   ctx.uiActions.registerSource({ id, name, icon }) → dispose
  */
 import { useCallback, useSyncExternalStore } from 'react'
@@ -45,17 +46,20 @@ export function apply(ctx) {
   }
 
   const t = ctx.locale.bind(NS)
-  const useWords = () => {
+  const useLanguage = () => {
     const subscribe = useCallback(listener => ctx.locale.subscribe(listener), [])
-    useSyncExternalStore(subscribe, () => ctx.locale.getSnapshot().active)
+    return useSyncExternalStore(subscribe, () => ctx.locale.getSnapshot().active)
+  }
+  const useWords = () => {
+    useLanguage()
     return t
   }
   const sources = createSources()
-  const { chat, Adopter } = createChat({ ctx, t, sources })
-  const { ActionBar, ActionButton } = createBar({ useWords, chat })
+  const { chat, start, open, Adopter } = createChat({ ctx, t, sources })
+  const { ActionBar, ActionButton } = createBar({ useWords, useLanguage, chat, start, open })
   const ItemCard = createCard({ sources })
 
-  ctx.provide('uiActions', { ActionBar, ActionButton, chat, registerSource: source => sources.register(source) })
+  ctx.provide('uiActions', { ActionBar, ActionButton, chat, start, registerSource: source => sources.register(source) })
 
   ctx.inject(['uiConversation'], scope => {
     scope.effect(() => scope.uiConversation.userText.register(itemRule), 'ui-actions: item rule')

@@ -23,6 +23,9 @@
     "noWorkspace": "请先打开一次对话，再试一次。",
     "noSession": "没能打开那个会话，请从会话列表再试一次。",
     "busy": "输入框正在发送，请稍后再试。",
-    "noHandler": "这个按钮没有接收方。"
+    "noHandler": "这个按钮没有接收方。",
+    "starting": "正在开始…",
+    "started": "已开始",
+    "openSession": "打开对话"
   }
 }
