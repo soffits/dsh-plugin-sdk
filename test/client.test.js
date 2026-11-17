@@ -12,7 +12,7 @@ function load() {
   const window = { __ModuleLoader__: { load: value => { registration = value } } }
   vm.runInNewContext(read('../client.js'), { window, console })
   const react = { createElement: (type, props, ...children) => ({ type, props, children }), useState: v => [typeof v === 'function' ? v() : v, () => {}], useEffect: () => {}, useRef: v => ({ current: v }), useLayoutEffect: () => {}, useCallback: f => f, useSyncExternalStore: (s, get) => get() }
-  const primitives = { Pill: 'Pill', Tag: 'Tag', Button: 'Button', StateDot: 'StateDot', Tooltip: 'Tooltip', IconSparkleOutlineRegular: 'IconSparkle', relativeTime: () => ({ unit: 'now', n: 0 }) }
+  const primitives = { Pill: 'Pill', Tag: 'Tag', Button: 'Button', StateDot: 'StateDot', Tooltip: 'Tooltip', IconSparkleRegular: 'IconSparkle', relativeTime: () => ({ unit: 'now', n: 0 }) }
   const modules = { react, '@deepseek-ai/dsh-client-ui-primitives': primitives }
   return { registration, exports: registration.factory(id => { assert.ok(id in modules, `unexpected require ${id}`); return modules[id] }) }
 }
@@ -78,4 +78,14 @@ test('the client names no language and no assistant', () => {
   const source = readdirSync(new URL('../src/client/', import.meta.url)).map(name => read(`../src/client/${name}`)).join('\n')
   assert.doesNotMatch(source, /\b(?:English|French|Chinese|zh-CN|en-US)\b/)
   assert.doesNotMatch(source, /\b(?:Sakina|Claude|assistant name)\b/i)
+})
+
+test('everything the kit takes from DSH’s own components exists in the oldest DSH it supports', () => {
+  const shipped = read('../node_modules/@deepseek-ai/dsh-client-ui-primitives/lib/index.js')
+  const exported = new Set([...shipped.matchAll(/^export \{([^}]*)\}/gm)].flatMap(m => m[1].split(',').map(name => name.trim().split(/\s+as\s+/).pop())))
+  assert.ok(exported.has('Button'), 'read the export list')
+  const source = readdirSync(new URL('../src/client/', import.meta.url)).map(name => read(`../src/client/${name}`)).join('\n')
+  const imported = [...source.matchAll(/import \{([^}]*)\} from '@deepseek-ai\/dsh-client-ui-primitives'/g)].flatMap(m => m[1].split(',').map(name => name.trim()).filter(Boolean))
+  assert.ok(imported.length > 0)
+  for (const name of imported) assert.ok(exported.has(name), `${name} is not in dsh-client-ui-primitives`)
 })

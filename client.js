@@ -1,4 +1,4 @@
-/* @soffits/dsh-ui-kit 0.1.0: built by scripts/build.mjs from src/client/, locale/ and Lucide 1.74.0 (ISC; see LICENSE-lucide). Do not edit. */
+/* @soffits/dsh-ui-kit 0.1.1: built by scripts/build.mjs from src/client/, locale/ and Lucide 1.74.0 (ISC; see LICENSE-lucide). Do not edit. */
 window.__ModuleLoader__.load({
   id: "@soffits/dsh-ui-kit",
   factory: (require) => {
@@ -536,7 +536,7 @@ function createSuggested({ useWords, actionsStore }) {
     return (0, import_react6.createElement)(
       "div",
       { className: "uk-suggested" },
-      (0, import_react6.createElement)("span", { className: "uk-suggestedLabel" }, (0, import_react6.createElement)(import_dsh_client_ui_primitives4.IconSparkleOutlineRegular, { size: 13 }), t("suggested")),
+      (0, import_react6.createElement)("span", { className: "uk-suggestedLabel" }, (0, import_react6.createElement)(import_dsh_client_ui_primitives4.IconSparkleRegular, { size: 13 }), t("suggested")),
       (0, import_react6.createElement)(uiActions.ActionBar, { actions: steps, part: "steps", about, states, onPress })
     );
   }

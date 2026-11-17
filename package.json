@@ -1,6 +1,6 @@
 {
   "name": "@soffits/dsh-ui-kit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Small shared pieces for DeepSeek Harness plugin pages, on top of DSH's own components: tone icon tiles, ticking countdowns and relative times, rings, sparklines and progress bars, a live dot, a short \"just changed\" wash, \"new since you looked\" dots, and the slot for suggested next steps.",
   "type": "module",
   "license": "MIT",
@@ -66,6 +66,7 @@
     "test": "node --test"
   },
   "devDependencies": {
+    "@deepseek-ai/dsh-client-ui-primitives": "0.2.2-rc.1",
     "esbuild": "^0.28.2",
     "lucide-static": "1.74.0"
   }
