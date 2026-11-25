@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "title": "UI kit",
+    "description": "Shared pieces for plugin pages: icon tiles, ticking times, rings and sparklines, a live dot and change cues."
+  },
+  "ui": {
+    "live": "Live",
+    "connecting": "Connecting",
+    "updated": "Updated {time}",
+    "liveUpdated": "Live · updated {time}",
+    "justNow": "just now",
+    "newSince": "New since you last looked",
+    "suggested": "Suggested",
+    "now": "now",
+    "inDuration": "in {duration}",
+    "earlier": "+{n} earlier",
+    "less": "Show less",
+    "send": "Send",
+    "mentionPick": "Mention someone",
+    "noMatch": "Nobody by that name",
+    "cancel": "Cancel",
+    "mentioned": "You were mentioned",
+    "unreadCount": "{n} unread"
+  }
+}
