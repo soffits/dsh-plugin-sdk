@@ -1,0 +1,46 @@
+{
+  "name": "@soffits/dsh-channel-core",
+  "version": "0.2.0",
+  "description": "Shared core for DeepSeek Harness chat bridges: the final answer of a turn and the silent marker, session model selection from the Web catalog, voice transcription, and the sender principal recorded on prompts.",
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./testing": "./testing.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "testing.js",
+    "src/*.js",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "check": "for f in index.js testing.js src/*.js test/*.js; do node --check \"$f\" || exit 1; done"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "chat-bridge",
+    "bot"
+  ],
+  "author": "Sakina",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soffits/dsh-channel-core.git"
+  },
+  "homepage": "https://github.com/soffits/dsh-channel-core#readme",
+  "bugs": {
+    "url": "https://github.com/soffits/dsh-channel-core/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
