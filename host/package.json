@@ -1,0 +1,56 @@
+{
+  "name": "@soffits/dsh-host-kit",
+  "version": "0.1.0",
+  "description": "Shared host-side helpers for DeepSeek Harness plugins: the person behind a request, locale files, change notices, Server-Sent Events streams, and the client.js build.",
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./build": "./build.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "build.js",
+    "src/*.js",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "check": "for f in index.js build.js src/*.js test/*.js; do node --check \"$f\" || exit 1; done"
+  },
+  "peerDependencies": {
+    "esbuild": ">=0.25"
+  },
+  "peerDependenciesMeta": {
+    "esbuild": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin"
+  ],
+  "author": "Sakina",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soffits/dsh-host-kit.git"
+  },
+  "homepage": "https://github.com/soffits/dsh-host-kit#readme",
+  "bugs": {
+    "url": "https://github.com/soffits/dsh-host-kit/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
