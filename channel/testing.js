@@ -1,6 +1,6 @@
 /**
  * Fakes of DSH behaviour for bridge tests, imported as
- * `@soffits/dsh-channel-core/testing`: how a queued message passes the
+ * `@soffits/dsh-plugin-sdk/channel/testing`: how a queued message passes the
  * `agent/pre-step` gate, the `sessionTitle` service, and `agent.model` folded
  * from the session log. A bridge builds its own fake Host and agents around
  * them, so every bridge's tests model DSH the same way.

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Plugin SDK",
+    "description": "Shared page pieces (tiles, icons, times, live status) and ask-the-assistant buttons that other plugins' pages use. Nothing to set."
+  }
+}

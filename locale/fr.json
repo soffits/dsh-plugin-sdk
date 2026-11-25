@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "SDK de plugins",
+    "description": "Éléments de page partagés (tuiles, icônes, heures, état en direct) et boutons « demander à l'assistant » utilisés par les pages d'autres plugins. Rien à régler."
+  }
+}

@@ -1,5 +1,0 @@
-# Bundle layer for @soffits/dsh-ui-kit: one row so DSH serves the Web client
-# that provides ctx.uiKit to other plugins. No settings.
-- insert:
-    - id: ui-kit
-      name: '@soffits/dsh-ui-kit'

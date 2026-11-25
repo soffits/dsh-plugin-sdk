@@ -15,9 +15,9 @@ function load() {
   return { registration, exports: registration.factory(id => { assert.equal(id, 'react'); return react }) }
 }
 
-test('the built client registers under the package name as a plugin with name, inject and apply', () => {
+test('the built part registers under its SDK id as a plugin with name, inject and apply', () => {
   const { registration, exports } = load()
-  assert.equal(registration.id, '@soffits/dsh-ui-actions')
+  assert.equal(registration.id, '@soffits/dsh-plugin-sdk/actions')
   assert.equal(exports.name, 'ui-actions')
   assert.deepEqual([...exports.inject], ['slots', 'locale'])
   assert.equal(typeof exports.apply, 'function')

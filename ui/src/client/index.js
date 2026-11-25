@@ -9,7 +9,7 @@
  *   useEventStream, LiveStatus                live updates and the header line that says so
  *   useWash, Wash, JustNow, NewDot            change cues
  *   History                                   earlier entries of one thing
- *   Suggested                                 suggested next steps, drawn by @soffits/dsh-ui-actions
+ *   Suggested                                 suggested next steps, drawn by the SDK's actions part (`ctx.uiActions`)
  *   Surface, Segments, TOUCH                  a card (over a blurred picture), a strip of steps, phone-sized targets
  *   ChatBubble, ChatDivider, DayLabel,        chat: a message, the lines between runs, text with @mentions,
  *   MentionText, ConversationRow, Composer    a conversation in a list, the message box with its @ picker
@@ -54,7 +54,7 @@ export function apply(ctx) {
     ctx.effect(() => {
       const style = document.createElement('style')
       style.id = STYLE_ID
-      style.dataset.plugin = '@soffits/dsh-ui-kit'
+      style.dataset.plugin = '@soffits/dsh-plugin-sdk'
       style.textContent = CSS
       document.head.appendChild(style)
       return () => style.remove()

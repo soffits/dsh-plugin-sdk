@@ -1,0 +1,4 @@
+# Bundle layer: one row so DSH serves the browser half (ctx.uiKit and ctx.uiActions); no tools.
+- insert:
+    - id: plugin-sdk
+      name: '@soffits/dsh-plugin-sdk'

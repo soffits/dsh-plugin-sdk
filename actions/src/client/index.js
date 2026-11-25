@@ -38,7 +38,7 @@ export function apply(ctx) {
     ctx.effect(() => {
       const style = document.createElement('style')
       style.id = STYLE_ID
-      style.dataset.plugin = '@soffits/dsh-ui-actions'
+      style.dataset.plugin = '@soffits/dsh-plugin-sdk'
       style.textContent = CSS
       document.head.appendChild(style)
       return () => style.remove()

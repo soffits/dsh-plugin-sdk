@@ -1,0 +1,82 @@
+{
+  "name": "@soffits/dsh-plugin-sdk",
+  "version": "0.1.0",
+  "description": "Shared parts for DeepSeek Harness plugins: Host helpers (people, locales, change notices, event streams, the client build), chat bridge helpers, and Web page pieces (ctx.uiKit) and ask-the-assistant buttons (ctx.uiActions) as one browser service.",
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./host": "./host/index.js",
+    "./host/build": "./host/build.js",
+    "./channel": "./channel/index.js",
+    "./channel/testing": "./channel/testing.js",
+    "./actions/item": "./actions/src/item.js",
+    "./ui/icons.json": "./ui/icons.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "host/index.js",
+    "host/build.js",
+    "host/src/*.js",
+    "channel/index.js",
+    "channel/testing.js",
+    "channel/src/*.js",
+    "actions/src/item.js",
+    "ui/icons.json",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "LICENSE-lucide",
+    "NOTICE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "engines": {
+    "node": ">=22",
+    "dsh": ">=0.2.2-rc.1 <0.3.0-0"
+  },
+  "scripts": {
+    "build": "node ui/scripts/build.mjs && node actions/scripts/build.mjs && node scripts/build-client.js",
+    "check": "node ui/scripts/build.mjs --check && node actions/scripts/build.mjs --check && node scripts/build-client.js --check && node --check index.js && node --check client.js",
+    "test": "node --test \"test/*.test.js\" \"host/test/*.test.js\" \"channel/test/*.test.js\" \"ui/test/*.test.js\" \"actions/test/*.test.js\""
+  },
+  "peerDependencies": {
+    "esbuild": ">=0.25"
+  },
+  "peerDependenciesMeta": {
+    "esbuild": { "optional": true }
+  },
+  "devDependencies": {
+    "@deepseek-ai/dsh-client-ui-primitives": "0.2.2-rc.1",
+    "esbuild": "^0.28.2",
+    "lucide-static": "1.74.0"
+  },
+  "keywords": ["dsh", "deepseek-harness", "dsh-plugin", "sdk"],
+  "license": "MIT",
+  "author": "Sakina",
+  "homepage": "https://github.com/soffits/dsh-plugin-sdk#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soffits/dsh-plugin-sdk.git"
+  },
+  "bugs": "https://github.com/soffits/dsh-plugin-sdk/issues"
+}

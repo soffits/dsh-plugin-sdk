@@ -14,7 +14,9 @@ import { fileURLToPath } from 'node:url'
 import { build } from 'esbuild'
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
-const pkg = JSON.parse(readFileSync(resolve(root, 'package.json'), 'utf8'))
+// The SDK's package; this part's browser module is joined into the SDK's client.js (scripts/build-client.js).
+const pkg = JSON.parse(readFileSync(resolve(root, '..', 'package.json'), 'utf8'))
+const id = `${pkg.name}/ui`
 const lucide = dirname(createRequire(import.meta.url).resolve('lucide-static/package.json'))
 
 /** The names in src/icons.txt, in order. */
@@ -82,9 +84,9 @@ const result = await build({
 // DSH runs client scripts as classic scripts in one global scope: everything stays inside the factory.
 const body = result.outputFiles[0].text
 const outputs = {
-  'client.js': `/* ${pkg.name} ${pkg.version}: built by scripts/build.mjs from src/client/, locale/ and Lucide ${lucideVersion()} (ISC; see LICENSE-lucide). Do not edit. */
+  'client.js': `/* ${id}: built by scripts/build.mjs from src/client/, locale/ and Lucide ${lucideVersion()} (ISC; see LICENSE-lucide). Do not edit. */
 window.__ModuleLoader__.load({
-  id: ${JSON.stringify(pkg.name)},
+  id: ${JSON.stringify(id)},
   factory: (require) => {
     var module = { exports: {} }
     var exports = module.exports

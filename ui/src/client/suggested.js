@@ -1,6 +1,6 @@
 /**
  * The slot for suggested next steps under a card or an item: a quiet
- * "Suggested" mark and the steps themselves, drawn by @soffits/dsh-ui-actions
+ * "Suggested" mark and the steps themselves, drawn by the SDK's actions part (`ctx.uiActions`)
  * (which records the press and starts the step). Nothing shows without steps,
  * or while that plugin isn't there.
  */

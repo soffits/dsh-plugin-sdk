@@ -1,6 +1,6 @@
-/* @soffits/dsh-ui-actions 0.2.1: built by scripts/build.mjs from src/client/ and locale/. Do not edit. */
+/* @soffits/dsh-plugin-sdk/actions: built by scripts/build.mjs from src/client/ and locale/. Do not edit. */
 window.__ModuleLoader__.load({
-  id: "@soffits/dsh-ui-actions",
+  id: "@soffits/dsh-plugin-sdk/actions",
   factory: (require) => {
     var module = { exports: {} }
     var exports = module.exports
@@ -22,7 +22,7 @@ var __copyProps = (to, from, except, desc) => {
 };
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-// src/client/index.js
+// actions/src/client/index.js
 var index_exports = {};
 __export(index_exports, {
   NS: () => NS,
@@ -36,7 +36,7 @@ var import_react5 = require("react");
 // locales:locales
 var locales_default = { "en": { "meta": { "title": "UI actions", "description": "Shared buttons for plugin pages (ask, done, snooze, open) and items attached to a chat as a card." }, "ui": { "chat": "Ask", "chatAbout": "Chat about this", "done": "Done", "snooze": "Snooze", "event": "Go", "link": "Open", "in3h": "In 3 hours", "tomorrow": "Tomorrow 9:00", "pick": "Pick a time\u2026", "set": "Snooze", "cancel": "Cancel", "sending": "Sending\u2026", "pending": "Waiting for it to be picked up", "handled": "Done", "unhandled": "Nothing picked this up yet", "failed": "Didn\u2019t go through: {message}", "noWorkspace": "Open a conversation once first, then try again.", "noSession": "That conversation didn\u2019t open. Try again from the conversation list.", "busy": "The message box is busy sending; try again in a moment.", "noHandler": "This button has nothing to send its press to.", "starting": "Starting\u2026", "started": "Started", "openSession": "Open conversation" } }, "fr": { "meta": { "title": "Actions d\u2019interface", "description": "Boutons partag\xE9s des pages de plugins (demander, fait, plus tard, ouvrir) et \xE9l\xE9ments joints \xE0 une conversation sous forme de carte." }, "ui": { "chat": "Demander", "chatAbout": "En discuter", "done": "Fait", "snooze": "Plus tard", "event": "Lancer", "link": "Ouvrir", "in3h": "Dans 3 heures", "tomorrow": "Demain 9:00", "pick": "Choisir une heure\u2026", "set": "Rappeler", "cancel": "Annuler", "sending": "Envoi\u2026", "pending": "En attente de traitement", "handled": "Fait", "unhandled": "Personne ne l\u2019a encore pris en charge", "failed": "\xC9chec : {message}", "noWorkspace": "Ouvrez d\u2019abord une conversation, puis r\xE9essayez.", "noSession": "La conversation ne s\u2019est pas ouverte. R\xE9essayez depuis la liste des conversations.", "busy": "La zone de message est en cours d\u2019envoi ; r\xE9essayez dans un instant.", "noHandler": "Ce bouton n\u2019a rien \xE0 qui transmettre l\u2019appui.", "starting": "D\xE9marrage\u2026", "started": "Lanc\xE9", "openSession": "Ouvrir la conversation" } }, "zh": { "meta": { "title": "\u754C\u9762\u64CD\u4F5C", "description": "\u63D2\u4EF6\u9875\u9762\u5171\u7528\u7684\u6309\u94AE\uFF08\u63D0\u95EE\u3001\u5B8C\u6210\u3001\u7A0D\u540E\u63D0\u9192\u3001\u6253\u5F00\uFF09\uFF0C\u4EE5\u53CA\u4EE5\u5361\u7247\u5F62\u5F0F\u9644\u5728\u5BF9\u8BDD\u91CC\u7684\u6761\u76EE\u3002" }, "ui": { "chat": "\u95EE\u95EE", "chatAbout": "\u804A\u804A\u8FD9\u4E2A", "done": "\u5B8C\u6210", "snooze": "\u7A0D\u540E\u63D0\u9192", "event": "\u6267\u884C", "link": "\u6253\u5F00", "in3h": "3 \u5C0F\u65F6\u540E", "tomorrow": "\u660E\u5929 9:00", "pick": "\u9009\u4E2A\u65F6\u95F4\u2026", "set": "\u7A0D\u540E\u63D0\u9192", "cancel": "\u53D6\u6D88", "sending": "\u53D1\u9001\u4E2D\u2026", "pending": "\u7B49\u5F85\u5904\u7406", "handled": "\u5DF2\u5904\u7406", "unhandled": "\u8FD8\u6CA1\u6709\u88AB\u5904\u7406", "failed": "\u6CA1\u6709\u6210\u529F\uFF1A{message}", "noWorkspace": "\u8BF7\u5148\u6253\u5F00\u4E00\u6B21\u5BF9\u8BDD\uFF0C\u518D\u8BD5\u4E00\u6B21\u3002", "noSession": "\u6CA1\u80FD\u6253\u5F00\u90A3\u4E2A\u4F1A\u8BDD\uFF0C\u8BF7\u4ECE\u4F1A\u8BDD\u5217\u8868\u518D\u8BD5\u4E00\u6B21\u3002", "busy": "\u8F93\u5165\u6846\u6B63\u5728\u53D1\u9001\uFF0C\u8BF7\u7A0D\u540E\u518D\u8BD5\u3002", "noHandler": "\u8FD9\u4E2A\u6309\u94AE\u6CA1\u6709\u63A5\u6536\u65B9\u3002", "starting": "\u6B63\u5728\u5F00\u59CB\u2026", "started": "\u5DF2\u5F00\u59CB", "openSession": "\u6253\u5F00\u5BF9\u8BDD" } } };
 
-// src/item.js
+// actions/src/item.js
 var TITLE_MAX = 200;
 var LINE_MAX = 300;
 var MAX_LINES = 15;
@@ -104,7 +104,7 @@ function stepMessage(instruction, item) {
 ${quote}`;
 }
 
-// src/rule.js
+// actions/src/rule.js
 var ITEM_NODE = "ui-actions-item";
 var cache = /* @__PURE__ */ new Map();
 function rangesOf(text) {
@@ -131,10 +131,10 @@ var itemRule = {
   }
 };
 
-// src/client/bar.js
+// actions/src/client/bar.js
 var import_react = require("react");
 
-// src/text.js
+// actions/src/text.js
 function pickText(value, language = "en") {
   if (typeof value === "string") return value;
   if (value === null || typeof value !== "object") return "";
@@ -145,7 +145,7 @@ function pickText(value, language = "en") {
   return typeof value[found] === "string" ? value[found] : "";
 }
 
-// src/client/look.js
+// actions/src/client/look.js
 var STYLE_ID = "dsh-ui-actions-style";
 var CSS = `
 .ua-bar{display:flex;flex-wrap:wrap;gap:6px;align-items:center;min-width:0}
@@ -205,7 +205,7 @@ var PATHS = {
   item: "M3.5 2.5h6l3 3v8h-9zM9.5 2.5v3h3M5.5 8.5h5M5.5 11h3.5"
 };
 
-// src/client/bar.js
+// actions/src/client/bar.js
 function tomorrowMorning(now = /* @__PURE__ */ new Date()) {
   const date = new Date(now);
   date.setDate(date.getDate() + 1);
@@ -368,7 +368,7 @@ function createBar({ useWords, useLanguage, chat, start, open }) {
   return { ActionBar, ActionButton };
 }
 
-// src/client/card.js
+// actions/src/client/card.js
 var import_react2 = require("react");
 function createCard({ sources }) {
   return function ItemCard({ node }) {
@@ -392,10 +392,10 @@ function createCard({ sources }) {
   };
 }
 
-// src/client/chat.js
+// actions/src/client/chat.js
 var import_react3 = require("react");
 
-// src/pending.js
+// actions/src/pending.js
 var PENDING_MS = 6e4;
 var sameDraft = (a, b) => a.replace(/\s+/gu, " ").trim() === b.replace(/\s+/gu, " ").trim();
 function draftText(itemText2, prompt = "") {
@@ -425,7 +425,7 @@ function createPending() {
   };
 }
 
-// src/workspace.js
+// actions/src/workspace.js
 function recentWorkspace(workspaces, sessionsById) {
   let best;
   let bestTime = Number.NEGATIVE_INFINITY;
@@ -441,7 +441,7 @@ function recentWorkspace(workspaces, sessionsById) {
   return best;
 }
 
-// src/client/chat.js
+// actions/src/client/chat.js
 var sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 function createChat({ ctx, t, sources }) {
   const pending = createPending();
@@ -512,7 +512,7 @@ function createChat({ ctx, t, sources }) {
   return { chat, start, open, Adopter };
 }
 
-// src/client/sources.js
+// actions/src/client/sources.js
 var import_react4 = require("react");
 function createSources() {
   const entries = /* @__PURE__ */ new Map();
@@ -552,7 +552,7 @@ function createSources() {
   };
 }
 
-// src/client/index.js
+// actions/src/client/index.js
 var NS = "dsh-ui-actions";
 var name = "ui-actions";
 var inject = ["slots", "locale"];
@@ -574,7 +574,7 @@ function apply(ctx) {
     ctx.effect(() => {
       const style = document.createElement("style");
       style.id = STYLE_ID;
-      style.dataset.plugin = "@soffits/dsh-ui-actions";
+      style.dataset.plugin = "@soffits/dsh-plugin-sdk";
       style.textContent = CSS;
       document.head.appendChild(style);
       return () => style.remove();

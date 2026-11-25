@@ -1,4 +1,6 @@
-# @soffits/dsh-ui-kit
+# Page pieces, `ctx.uiKit`
+
+Part of [@soffits/dsh-plugin-sdk](../README.md): the SDK's browser half (service `uiKit`). Its history before the merge is in the archived [soffits/dsh-ui-kit](https://github.com/soffits/dsh-ui-kit) repository.
 
 Small shared pieces for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) plugin pages. DSH already gives plugins its own controls through `@deepseek-ai/dsh-client-ui-primitives` (Button, Tag, Pill, StateDot, Tooltip and the rest), and you should use those first. This kit only adds what pages that show live data keep needing and DSH doesn't have:
 
@@ -11,24 +13,16 @@ Small shared pieces for [DeepSeek Harness](https://github.com/deepseek-ai/deepse
 - a card surface, optionally over a blurred picture, and a strip of steps or episodes
 - a phone-sized touch target for a plugin's own controls
 - chat: message bubbles, day and "new" lines, text with @mentions marked, a conversation row, and a message box with an @ picker
-- the slot where [@soffits/dsh-ui-actions](https://github.com/soffits/dsh-ui-actions) draws suggested next steps
+- the slot where `ctx.uiActions` (the actions part) draws suggested next steps
 
 Every piece is a small React component or hook that fits inside DSH's own rows and cards. Colours come only from DSH's theme tokens, so light and dark follow the app, and motion respects "reduce motion".
-
-## Install
-
-```sh
-dsh plugin --profile web add @soffits/dsh-ui-kit
-```
-
-Then restart DSH. The kit adds nothing to the UI by itself; other plugins use it.
 
 ## Use it from a plugin
 
 List the kit in your package's `dsh.client.inject`, so DSH loads it before your page, and take the service when it is there:
 
 ```json
-"dsh": { "client": { "platform": "web", "inject": ["@soffits/dsh-ui-kit"] } }
+"dsh": { "client": { "platform": "web", "inject": ["@soffits/dsh-plugin-sdk"] } }
 ```
 
 ```js

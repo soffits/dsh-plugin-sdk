@@ -1,4 +1,6 @@
-# dsh-ui-actions
+# Ask-the-assistant buttons, `ctx.uiActions`
+
+Part of [@soffits/dsh-plugin-sdk](../README.md): the SDK's browser half (service `uiActions`; `/actions/item` for the item format). Its history before the merge is in the archived [soffits/dsh-ui-actions](https://github.com/soffits/dsh-ui-actions) repository.
 
 Shared action buttons for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (DSH) plugin pages, and a way to ask the agent about an item that keeps the item as a card instead of a lump of text.
 
@@ -17,20 +19,12 @@ Shared action buttons for [DeepSeek Harness](https://github.com/deepseek-ai/deep
 
 It is a client-side library for other plugins; on its own it adds nothing to the page.
 
-## Install
-
-```sh
-dsh plugin --profile web add @soffits/dsh-ui-actions
-```
-
-Needs DSH 0.2.2-rc.1 or later. From 0.2.2-rc.2 the card in the message box shows the item's title and first line; on rc.1 it shows the item's text cut to one line.
-
 ## For plugin authors
 
 List the package in your `package.json` so your client loads after it, and use the service when it's there (your page still works without it):
 
 ```json
-"dsh": { "client": { "platform": "web", "inject": ["@deepseek-ai/dsh-client-locale", "@soffits/dsh-ui-actions"] } }
+"dsh": { "client": { "platform": "web", "inject": ["@deepseek-ai/dsh-client-locale", "@soffits/dsh-plugin-sdk"] } }
 ```
 
 ```js
@@ -62,7 +56,7 @@ h(buttons.ActionBar, {
 - `registerSource({ id, name, icon })` names your plugin on item cards; `name` can be a function so it follows the language, `icon` is a component taking `{ size }`. It returns a function that unregisters.
 - `about.lines`: what the item shows, one entry per line (at most 15 are sent); `about.context`: small JSON with the ids and values the agent needs to act on it.
 
-The item text format is exported as `@soffits/dsh-ui-actions/item` (`itemText`, `parseItem`, `itemRanges`) for tools that read messages.
+The item text format is exported as `@soffits/dsh-plugin-sdk/actions/item` (`itemText`, `parseItem`, `itemRanges`) for tools that read messages.
 
 ## Languages
 

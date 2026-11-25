@@ -32,9 +32,9 @@ function applied() {
   return { provided, words }
 }
 
-test('the built client registers under the package name and needs only React and DSH’s own components', () => {
+test('the built part registers under its SDK id and needs only React and DSH’s own components', () => {
   const { registration, exports } = load()
-  assert.equal(registration.id, '@soffits/dsh-ui-kit')
+  assert.equal(registration.id, '@soffits/dsh-plugin-sdk/ui')
   assert.equal(exports.name, 'ui-kit')
   assert.deepEqual([...exports.inject], ['locale'])
 })
@@ -81,7 +81,7 @@ test('the client names no language and no assistant', () => {
 })
 
 test('everything the kit takes from DSH’s own components exists in the oldest DSH it supports', () => {
-  const shipped = read('../node_modules/@deepseek-ai/dsh-client-ui-primitives/lib/index.js')
+  const shipped = read('../../node_modules/@deepseek-ai/dsh-client-ui-primitives/lib/index.js')
   const exported = new Set([...shipped.matchAll(/^export \{([^}]*)\}/gm)].flatMap(m => m[1].split(',').map(name => name.trim().split(/\s+as\s+/).pop())))
   assert.ok(exported.has('Button'), 'read the export list')
   const source = readdirSync(new URL('../src/client/', import.meta.url)).map(name => read(`../src/client/${name}`)).join('\n')
