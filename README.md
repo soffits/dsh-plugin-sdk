@@ -23,6 +23,8 @@ and names it in its own `package.json`, so the page loads the SDK first:
 "dsh": { "client": { "platform": "web", "inject": ["@soffits/dsh-plugin-sdk"] } }
 ```
 
+`/host/build` needs `esbuild` (>=0.25) in the dependent plugin's `devDependencies`; it is an optional peer of the SDK, so installing the SDK alone does not bring it.
+
 It brings one row, `plugin-sdk`, with nothing to set and no tools.
 
 ## History
