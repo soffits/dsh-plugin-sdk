@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "title": "Actions d’interface",
+    "description": "Boutons partagés des pages de plugins (demander, fait, plus tard, ouvrir) et éléments joints à une conversation sous forme de carte."
+  },
+  "ui": {
+    "chat": "Demander",
+    "chatAbout": "En discuter",
+    "done": "Fait",
+    "snooze": "Plus tard",
+    "event": "Lancer",
+    "link": "Ouvrir",
+    "in3h": "Dans 3 heures",
+    "tomorrow": "Demain 9:00",
+    "pick": "Choisir une heure…",
+    "set": "Rappeler",
+    "cancel": "Annuler",
+    "sending": "Envoi…",
+    "pending": "En attente de traitement",
+    "handled": "Fait",
+    "unhandled": "Personne ne l’a encore pris en charge",
+    "failed": "Échec : {message}",
+    "noWorkspace": "Ouvrez d’abord une conversation, puis réessayez.",
+    "noSession": "La conversation ne s’est pas ouverte. Réessayez depuis la liste des conversations.",
+    "busy": "La zone de message est en cours d’envoi ; réessayez dans un instant.",
+    "noHandler": "Ce bouton n’a rien à qui transmettre l’appui.",
+    "starting": "Démarrage…",
+    "started": "Lancé",
+    "openSession": "Ouvrir la conversation"
+  }
+}

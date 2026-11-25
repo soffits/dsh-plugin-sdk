@@ -1,0 +1,5 @@
+# Bundle layer for @soffits/dsh-ui-actions: one row so DSH serves the Web
+# client that provides ctx.uiActions to other plugins. No settings.
+- insert:
+    - id: ui-actions
+      name: '@soffits/dsh-ui-actions'

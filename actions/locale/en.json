@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "title": "UI actions",
+    "description": "Shared buttons for plugin pages (ask, done, snooze, open) and items attached to a chat as a card."
+  },
+  "ui": {
+    "chat": "Ask",
+    "chatAbout": "Chat about this",
+    "done": "Done",
+    "snooze": "Snooze",
+    "event": "Go",
+    "link": "Open",
+    "in3h": "In 3 hours",
+    "tomorrow": "Tomorrow 9:00",
+    "pick": "Pick a time…",
+    "set": "Snooze",
+    "cancel": "Cancel",
+    "sending": "Sending…",
+    "pending": "Waiting for it to be picked up",
+    "handled": "Done",
+    "unhandled": "Nothing picked this up yet",
+    "failed": "Didn’t go through: {message}",
+    "noWorkspace": "Open a conversation once first, then try again.",
+    "noSession": "That conversation didn’t open. Try again from the conversation list.",
+    "busy": "The message box is busy sending; try again in a moment.",
+    "noHandler": "This button has nothing to send its press to.",
+    "starting": "Starting…",
+    "started": "Started",
+    "openSession": "Open conversation"
+  }
+}
