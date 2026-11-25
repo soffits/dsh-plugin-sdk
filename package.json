@@ -1,6 +1,6 @@
 {
   "name": "@soffits/dsh-plugin-sdk",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Shared parts for DeepSeek Harness plugins: Host helpers (people, locales, change notices, event streams, the client build), chat bridge helpers, and Web page pieces (ctx.uiKit) and ask-the-assistant buttons (ctx.uiActions) as one browser service.",
   "type": "module",
   "main": "./index.js",
@@ -63,14 +63,21 @@
     "esbuild": ">=0.25"
   },
   "peerDependenciesMeta": {
-    "esbuild": { "optional": true }
+    "esbuild": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@deepseek-ai/dsh-client-ui-primitives": "0.2.2-rc.1",
     "esbuild": "^0.28.2",
     "lucide-static": "1.74.0"
   },
-  "keywords": ["dsh", "deepseek-harness", "dsh-plugin", "sdk"],
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "sdk"
+  ],
   "license": "MIT",
   "author": "Sakina",
   "homepage": "https://github.com/soffits/dsh-plugin-sdk#readme",

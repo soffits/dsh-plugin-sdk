@@ -26,6 +26,11 @@ test('client.js registers under the package name, takes data in, and --check spo
     assert.equal(loaded.factory(() => ({})).hi, 'Hello')
     assert.equal(await readFile(join(root, 'names.json'), 'utf8'), '[]\n')
     assert.equal(await buildClient({ ...options, check: true }), true)
+    assert.equal(await buildClient({ ...options, id: '@example/pages/part', check: false }), true)
+    const part = await readFile(join(root, 'client.js'), 'utf8')
+    assert.match(part, /^\/\* @example\/pages\/part: built from/)
+    assert.match(part, /id: "@example\/pages\/part"/)
+    await buildClient({ ...options, check: false })
     await writeFile(join(root, 'locale/en.json'), JSON.stringify({ ui: { hi: 'Hi' } }))
     const errors = console.error
     console.error = () => {}

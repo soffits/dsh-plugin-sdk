@@ -24,6 +24,7 @@ export function localeFiles(root) {
 /**
  * @param {object} options
  * @param {string} options.root - the plugin's folder (its package.json names the module)
+ * @param {string} [options.id] - the module id, for a part of a package that has no package.json of its own
  * @param {string} [options.entry] - relative to `root`
  * @param {string[]} [options.external] - modules the page's shared module table provides
  * @param {Record<string, () => unknown>} [options.data] - `import x from 'virtual:<name>'` gives the
@@ -35,6 +36,7 @@ export function localeFiles(root) {
  */
 export async function buildClient({
   root,
+  id,
   entry = 'src/client/index.js',
   external = ['react', '@deepseek-ai/dsh-client-ui-primitives'],
   data = {},
@@ -43,7 +45,9 @@ export async function buildClient({
   check = process.argv.includes('--check'),
 }) {
   const { build } = await import('esbuild')
-  const pkg = JSON.parse(readFileSync(join(root, 'package.json'), 'utf8'))
+  const pkg = id === undefined ? JSON.parse(readFileSync(join(root, 'package.json'), 'utf8')) : undefined
+  const name = id ?? pkg.name
+  const label = pkg === undefined ? name : `${pkg.name} ${pkg.version}`
   const virtual = {
     name: 'virtual',
     setup(b) {
@@ -68,9 +72,9 @@ export async function buildClient({
     logLevel: 'warning',
   })
   const outputs = {
-    'client.js': `/* ${pkg.name} ${pkg.version}: built from ${from}. Do not edit. */
+    'client.js': `/* ${label}: built from ${from}. Do not edit. */
 window.__ModuleLoader__.load({
-  id: ${JSON.stringify(pkg.name)},
+  id: ${JSON.stringify(name)},
   factory: (require) => {
     var module = { exports: {} }
     var exports = module.exports
